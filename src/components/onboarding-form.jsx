@@ -1,15 +1,16 @@
 "use client"
 
-import { useActionState, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { sendMail } from "@/lib/actions"
 import { cn } from "@/lib/utils"
-import { Loader2, MapPin, User, Mail, Store, Star } from "lucide-react"
-import { onboardAction } from "@/lib/actions"
+import { Loader2, Mail, MapPin, Star, Store, User } from "lucide-react"
+import { useActionState, useState } from "react"
+import { toast } from "sonner"
 
 const initialState = {
   message: "",
@@ -17,7 +18,7 @@ const initialState = {
 }
 
 export function OnboardingForm({ className, ...props }) {
-  const [state, formAction, isPending] = useActionState(onboardAction, initialState)
+
   const [gstRegistered, setGstRegistered] = useState(undefined)
   const [onlinePresence, setOnlinePresence] = useState({
     website: "",
@@ -38,6 +39,28 @@ export function OnboardingForm({ className, ...props }) {
     // Reset the action state if needed, though useActionState doesn't expose a direct reset.
     // For a true reset of useActionState, you'd typically re-mount the component or pass a new key.
   }
+
+  async function onboardAction(prevState, formData) {
+    try {
+      const data = Object.fromEntries(formData.entries())
+      console.log("Onboarding form data received:", data)
+
+      console.debug("sending mail....")
+      const res = await sendMail({ data })
+      console.debug("mail sent....")
+
+      if (res.status === "SUCCESS") {
+        toast.success(res.message)
+      } else {
+        toast.warning(res.message)
+      }
+    } catch (error) {
+      toast.error("Something went wrong")
+    }
+
+  }
+
+  const [state, formAction, isPending] = useActionState(onboardAction, initialState)
 
   return (
     <div className={cn("w-full max-w-2xl space-y-6", className)} {...props}>
@@ -347,32 +370,6 @@ export function OnboardingForm({ className, ...props }) {
             {state.message}
           </p>
         )}
-
-        {/* Footer */}
-        <div className="text-center text-xs text-gray-500 mt-8 space-y-1">
-          <p>Never submit passwords through Google Forms.</p>
-          <p>
-            This content is neither created nor endorsed by Google. -{" "}
-            <a href="#" className="text-blue-600 hover:underline">
-              Contact form owner
-            </a>{" "}
-            -{" "}
-            <a href="#" className="text-blue-600 hover:underline">
-              Terms of Service
-            </a>{" "}
-            -{" "}
-            <a href="#" className="text-blue-600 hover:underline">
-              Privacy Policy
-            </a>
-          </p>
-          <p>
-            Does this form look suspicious?{" "}
-            <a href="#" className="text-blue-600 hover:underline">
-              Report
-            </a>
-          </p>
-          <p className="text-lg font-semibold text-gray-700 mt-2">Google Forms</p>
-        </div>
       </form>
     </div>
   )
