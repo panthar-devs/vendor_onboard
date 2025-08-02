@@ -120,8 +120,9 @@ html {
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 selection:bg-green-600 selection:text-white;
   }
+
   body {
     @apply bg-background text-foreground;
   }
