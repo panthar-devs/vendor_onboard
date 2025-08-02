@@ -110,7 +110,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center justify-center">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/eyewear-collection.png"
                   alt="Eyewear Collection"
                   width={600}
                   height={400}
