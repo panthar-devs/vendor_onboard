@@ -67,7 +67,8 @@ export default function HomePage() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="  w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-green-50 via-white to-emerald-50">
-          <div className="container px-4 md:px-6">
+          <div className="flex items-center justify-center">
+            <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
@@ -117,11 +118,12 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+          </div>
         </section>
 
         {/* About Section */}
         <section id="about" className="  w-full py-12 md:py-24 lg:py-32">
-          <div className=" flex items-center justify-center">
+          <div className="flex items-center justify-center">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
@@ -136,7 +138,7 @@ export default function HomePage() {
               </div>
               <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/modern-optical-store.jpg"
                   alt="Modern Optical Store"
                   width={600}
                   height={400}
@@ -387,7 +389,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center justify-center">
                   <Image
-                    src="/placeholder.svg?height=400&width=600"
+                    src="/sucsessful-optical-vendor.png"
                     alt="Successful Optical Vendor"
                     width={600}
                     height={400}
@@ -554,7 +556,7 @@ export default function HomePage() {
         </div>
         <div className="container border-t pt-6 mt-8">
           <p className="text-xs text-gray-600 text-center">
-            © {new Date().getFullYear()} FrameFinder. All rights reserved. Empowering India's eyewear industry.
+            © {new Date().getFullYear()} Designed and Developed By <Link href={'https://www.pantharinfohub.com'} target="_blank" className="font-bold" > Panthar InfoHub </Link>.
           </p>
         </div>
       </footer>
