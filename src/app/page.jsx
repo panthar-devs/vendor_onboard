@@ -1,3 +1,6 @@
+"use client"
+import { useRouter } from 'next/navigation';
+import Lenis from "lenis"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -6,7 +9,7 @@ import {
   Store,
   TrendingUp,
   MapPin,
-  Shield,
+  Shield, 
   Zap,
   Heart,
   ArrowRight,
@@ -17,17 +20,34 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect } from "react"
 
 export default function HomePage() {
+
+  const router = useRouter();
+
+  const handleVendorClick = () => {
+    router.push('/onboarding'); // This path must match your folder name
+  };
+
+  useEffect(() =>{
+    const lenis = new Lenis();
+    function raf(time){
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf); 
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
-      <header className="px-4 lg:px-6 h-16 flex items-center border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-50">
+      <header className=" selection:bg-green-600 selection:text-white px-4 lg:px-6 h-16 flex items-center border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-50">
         <Link href="/" className="flex items-center justify-center gap-3">
           <div className="bg-green-600 px-3 py-2 rounded-md">
             <span className="text-white font-bold text-lg">FrameFinder</span>
           </div>
-          <span className="text-sm text-gray-600 font-medium">An eyewear hub</span>
+          <span className="text-sm text-gray-600 font-medium p-1">An eyewear hub</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link href="#about" className="text-sm font-medium hover:text-green-600 transition-colors">
@@ -50,7 +70,7 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-green-50 via-white to-emerald-50">
+        <section className=" selection:bg-green-600 selection:text-white w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-green-50 via-white to-emerald-50">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
@@ -69,7 +89,7 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="bg-green-600 hover:bg-green-700">
+                  <Button onClick={handleVendorClick} size="lg" className="bg-green-600 hover:bg-green-700">
                     Join as Vendor
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -102,7 +122,7 @@ export default function HomePage() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="about" className=" selection:bg-green-600 selection:text-white w-full py-12 md:py-24 lg:py-32">
           <div className=" flex items-center justify-center">
             <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -147,7 +167,7 @@ export default function HomePage() {
         </section>
 
         {/* Mission & Vision Section */}
-        <section id="mission" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+        <section id="mission" className=" selection:bg-green-600 selection:text-white w-full py-12 md:py-24 lg:py-32 bg-gray-50">
           <div className=" flex items-center justify-center">
             <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
@@ -187,7 +207,7 @@ export default function HomePage() {
         </section>
 
         {/* Features Section */}
-        <section id="features" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="features" className= " selection:bg-green-600 selection:text-white w-full py-12 md:py-24 lg:py-32">
           <div className=" flex items-center justify-center">
             <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -273,7 +293,7 @@ export default function HomePage() {
         </section>
 
         {/* How It Works Section */}
-        <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+        <section id="how-it-works" className=" selection:bg-green-600 selection:text-white w-full py-12 md:py-24 lg:py-32 bg-gray-50">
           <div className=" flex items-center justify-center">
             <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -321,7 +341,7 @@ export default function HomePage() {
         </section>
 
         {/* Benefits Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className=" selection:bg-green-600 selection:text-white w-full py-12 md:py-24 lg:py-32">
           <div className=" flex items-center justify-center">
             <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
@@ -382,7 +402,7 @@ export default function HomePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-green-600 to-emerald-600">
+        <section className=" selection:bg-green-800 selection:text-white w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-green-600 to-emerald-600">
           <div className="flex items-center justify-center">
             <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -396,7 +416,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
+                <Button onClick={handleVendorClick} size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
                   Become a Vendor
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -417,7 +437,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer
         id="contact"
-        className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-gray-50"
+        className=" selection:bg-green-600 selection:text-white flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-gray-50"
       >
         <div className="container grid gap-8 md:grid-cols-4">
           <div className="space-y-4">
