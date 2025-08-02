@@ -6,7 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { sendMail } from "@/lib/actions"
+import { sendMail, sendUserMail } from "@/lib/actions"
 import { cn } from "@/lib/utils"
 import { Loader2, Mail, MapPin, Star, Store, User } from "lucide-react"
 import { useActionState, useState } from "react"
@@ -47,12 +47,16 @@ export function OnboardingForm({ className, ...props }) {
 
       console.debug("sending mail....")
       const res = await sendMail({ data })
-      console.debug("mail sent....")
+      console.debug("self mail sent....")
 
-      if (res.status === "SUCCESS") {
-        toast.success(res.message)
+      console.debug("sending user mail....")
+      const userRes = await sendUserMail({ data })
+      console.debug("self mail sent....")
+
+      if (res.status === "SUCCESS" && userRes.status === "SUCCESS") {
+        toast.success("Form Submitted successfully")
       } else {
-        toast.warning(res.message)
+        toast.warning("Something went wrong....")
       }
     } catch (error) {
       toast.error("Something went wrong")
