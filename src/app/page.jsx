@@ -45,7 +45,7 @@ export default function HomePage() {
           </div>
           <span className="text-sm text-gray-600 font-medium p-1">An eyewear hub</span>
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
+        <nav className="ml-auto hidden sm:flex gap-4 sm:gap-6">
           <Link href="#about" className="text-sm font-medium hover:text-green-600 transition-colors">
             About
           </Link>
