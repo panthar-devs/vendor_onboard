@@ -7,15 +7,20 @@ import {
   ArrowRight,
   AtSign,
   CheckCircle,
+  CodeXml,
   CreditCard,
   Eye,
   Globe,
   Heart,
+  IndianRupee,
   Instagram,
   Linkedin,
   MapPin,
+  Package,
+  Settings,
   Shield,
   Smartphone,
+  Store,
   TrendingUp,
   User,
   Zap
@@ -183,7 +188,7 @@ export default function HomePage() {
               </div>
               <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
                 <Image
-                  src="/modern-optical-store.jpg"
+                  src="/image.jpg"
                   alt="Modern Optical Store"
                   width={600}
                   height={400}
@@ -266,7 +271,7 @@ export default function HomePage() {
               <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="text-center pb-2">
-                    <Globe className="mx-auto h-12 w-12 text-green-600 mb-4" />
+                    <Store className="mx-auto h-12 w-12 text-green-600 mb-4" />
                     <CardTitle>Get your Own personalized Store</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
@@ -277,7 +282,7 @@ export default function HomePage() {
                 </Card>
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="text-center pb-2">
-                    <Smartphone className="mx-auto h-12 w-12 text-green-600 mb-4" />
+                    <Settings className="mx-auto h-12 w-12 text-green-600 mb-4" />
                     <CardTitle>Easy Store Setup</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
@@ -288,7 +293,7 @@ export default function HomePage() {
                 </Card>
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="text-center pb-2">
-                    <Shield className="mx-auto h-12 w-12 text-emerald-600 mb-4" />
+                    <Smartphone className="mx-auto h-12 w-12 text-green-600 mb-4" />
                     <CardTitle>Mobile First Platform</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
@@ -299,7 +304,7 @@ export default function HomePage() {
                 </Card>
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="text-center pb-2">
-                    <Zap className="mx-auto h-12 w-12 text-green-500 mb-4" />
+                    <Package className="mx-auto h-12 w-12 text-green-600 mb-4" />
                     <CardTitle>Easy Inventory Management</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
@@ -310,7 +315,7 @@ export default function HomePage() {
                 </Card>
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="text-center pb-2">
-                    <CreditCard className="mx-auto h-12 w-12 text-green-700 mb-4" />
+                    <Eye className="mx-auto h-12 w-12 text-green-700 mb-4" />
                     <CardTitle>Chance to Showcase your Brand</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
@@ -332,7 +337,7 @@ export default function HomePage() {
                 </Card>
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="text-center pb-2">
-                    <Heart className="mx-auto h-12 w-12 text-green-600 mb-4" />
+                    <IndianRupee className="mx-auto h-12 w-12 text-green-600 mb-4" />
                     <CardTitle>Secure Payments</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
@@ -343,7 +348,7 @@ export default function HomePage() {
                 </Card>
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="text-center pb-2">
-                    <Heart className="mx-auto h-12 w-12 text-green-600 mb-4" />
+                    <TrendingUp className="mx-auto h-12 w-12 text-green-600 mb-4" />
                     <CardTitle>Early Access to promotions and marketing Support</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
@@ -354,7 +359,7 @@ export default function HomePage() {
                 </Card>
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="text-center pb-2">
-                    <Heart className="mx-auto h-12 w-12 text-green-600 mb-4" />
+                    <CodeXml className="mx-auto h-12 w-12 text-green-600 mb-4" />
                     <CardTitle>No Website? No problem </CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
