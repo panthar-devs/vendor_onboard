@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Lenis from "lenis";
 import {
   ArrowRight,
+  AtSign,
   CheckCircle,
   CreditCard,
   Eye,
@@ -19,11 +20,57 @@ import {
   User,
   Zap
 } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
 export default function HomePage() {
+
+  const items = [
+    {
+      id: 1,
+      title: "Is there a fee to join FrameFinder?",
+      content : "No! We're currently waiving all listing fees during our launch phase. You only pay a small commission on successful orders."
+    },
+    {
+      id: 2,
+      title: "Do I need a GST number to sell?",
+      content : "Yes. You must have a valid GSTIN and PAN card to register as a vendor."
+    },
+    {
+      id: 3,
+      title: "What kind of eyewear can I sell?",
+      content : "Spectacles, sunglasses, contact lenses, powered glasses, prescription lenses, and accessories — all are welcome!"
+    },
+    {
+      id: 4,
+      title: "Who handles shipping and returns?",
+      content : "ve partnered with courier services for delivery. You pack the product — we handle pickup and return logistics."
+    },
+    {
+      id: 5,
+      title: "How do I upload my products?",
+      content : "Through our vendor dashboard — upload one by one or in bulk via CSV and images."
+    },
+    {
+      id: 6,
+      title: "How do I receive payments?",
+      content : "You'll receive direct bank transfers on a weekly cycle, minus the platform commission."
+    },
+    {
+      id: 7,
+      title: "Can I talk to someone before joining?",
+      content : "Absolutely — book a free onboarding call with our team or message us on WhatsApp!"
+    },
+    
+
+  ];
 
 
   useEffect(() => {
@@ -80,9 +127,7 @@ export default function HomePage() {
                   </h1>
                   <p className="text-lg text-green-600 font-semibold italic">An eyewear hub</p>
                   <p className="max-w-[600px] text-gray-600 md:text-xl">
-                    FrameFinder is the ultimate multivendor e-commerce platform connecting optical vendors across India.
-                    Empowering local businesses to reach customers nationwide and take the eyewear industry to the next
-                    level.
+                    Welcome to FrameFinder, India’s first multi-vendor B2C eyewear ecommerce platform — where your eyewear business gets a digital showroom, nationwide reach, and all the tools you need to grow fast in the online world.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -93,7 +138,7 @@ export default function HomePage() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                   <Button variant="outline" size="lg">
-                    Learn More
+                    Contact US  
                   </Button>
                 </div>
                 <div className="flex items-center gap-4 text-sm text-gray-600">
@@ -129,10 +174,10 @@ export default function HomePage() {
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">About FrameFinder</h2>
                   <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    FrameFinder is India's first multivendor eyewear e-commerce platform, designed to bridge the gap
-                    between local optical vendors and customers across the nation. We provide a comprehensive digital
-                    marketplace where optical businesses can showcase their products, manage inventory, and reach
-                    customers beyond their geographical boundaries.
+                    FrameFinder is a dedicated online marketplace designed exclusively for eyewear sellers — from small optical shops to premium frame brands. Our platform connects you directly with customers across India, without needing to open stores or invest heavily in tech.
+                  </p>
+                  <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    Whether you sell spectacles, sunglasses, contact lenses, powered eyewear, or accessories, you can list your products, reach new customers, and grow your brand — all in one place.  
                   </p>
                 </div>
               </div>
@@ -222,41 +267,17 @@ export default function HomePage() {
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="text-center pb-2">
                     <Globe className="mx-auto h-12 w-12 text-green-600 mb-4" />
-                    <CardTitle>Pan India Reach</CardTitle>
+                    <CardTitle>Get your Own personalized Store</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
                     <p className="text-gray-600">
-                      Expand your business beyond local boundaries and reach customers across all states and cities in
-                      India.
+                      Create your own branded space on FrameFinder — no coding, no cost.
                     </p>
                   </CardContent>
                 </Card>
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="text-center pb-2">
                     <Smartphone className="mx-auto h-12 w-12 text-green-600 mb-4" />
-                    <CardTitle>Mobile-First Platform</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-gray-600">
-                      Optimized for mobile devices with responsive design ensuring seamless experience across all
-                      platforms.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                  <CardHeader className="text-center pb-2">
-                    <Shield className="mx-auto h-12 w-12 text-emerald-600 mb-4" />
-                    <CardTitle>Secure Transactions</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-gray-600">
-                      Advanced security measures and encrypted payment gateways ensure safe transactions for all users.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                  <CardHeader className="text-center pb-2">
-                    <Zap className="mx-auto h-12 w-12 text-green-500 mb-4" />
                     <CardTitle>Easy Store Setup</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
@@ -267,7 +288,40 @@ export default function HomePage() {
                 </Card>
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="text-center pb-2">
+                    <Shield className="mx-auto h-12 w-12 text-emerald-600 mb-4" />
+                    <CardTitle>Mobile First Platform</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-gray-600">
+                      Optimized for mobile devices with responsive design ensuring seamless experience across all platforms.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+                  <CardHeader className="text-center pb-2">
+                    <Zap className="mx-auto h-12 w-12 text-green-500 mb-4" />
+                    <CardTitle>Easy Inventory Management</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-gray-600">
+                      Advanced tools to track and manage your eyewear inventory.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+                  <CardHeader className="text-center pb-2">
                     <CreditCard className="mx-auto h-12 w-12 text-green-700 mb-4" />
+                    <CardTitle>Chance to Showcase your Brand</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-gray-600">
+                      Enhanced online presence and brand recognition nationwide
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+                  <CardHeader className="text-center pb-2">
+                    <Heart className="mx-auto h-12 w-12 text-green-600 mb-4" />
                     <CardTitle>Multiple Payment Options</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
@@ -279,11 +333,33 @@ export default function HomePage() {
                 <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="text-center pb-2">
                     <Heart className="mx-auto h-12 w-12 text-green-600 mb-4" />
-                    <CardTitle>24/7 Support</CardTitle>
+                    <CardTitle>Secure Payments</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
                     <p className="text-gray-600">
-                      Dedicated customer support team available round the clock to assist vendors and customers.
+                      Advanced security measures and encrypted payment gateways ensure safe transactions for all users.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+                  <CardHeader className="text-center pb-2">
+                    <Heart className="mx-auto h-12 w-12 text-green-600 mb-4" />
+                    <CardTitle>Early Access to promotions and marketing Support</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-gray-600">
+                      Professional marketing and promotional support to boost sales
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+                  <CardHeader className="text-center pb-2">
+                    <Heart className="mx-auto h-12 w-12 text-green-600 mb-4" />
+                    <CardTitle>No Website? No problem </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-gray-600">
+                      You get your own vendor dashboard, order tracking, sales analytics, and customer management — without writing a single line of code.
                     </p>
                   </CardContent>
                 </Card>
@@ -358,7 +434,7 @@ export default function HomePage() {
                       <div>
                         <h4 className="font-semibold">Increased Revenue</h4>
                         <p className="text-gray-600 text-sm">
-                          Access to millions of customers across India leading to higher sales
+                            No listing fees (limited time offer)
                         </p>
                       </div>
                     </div>
@@ -366,14 +442,14 @@ export default function HomePage() {
                       <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold">Brand Visibility</h4>
-                        <p className="text-gray-600 text-sm">Enhanced online presence and brand recognition nationwide</p>
+                        <p className="text-gray-600 text-sm">Marketing support via social media & ads</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold">Inventory Management</h4>
-                        <p className="text-gray-600 text-sm">Advanced tools to track and manage your eyewear inventory</p>
+                        <p className="text-gray-600 text-sm">Customer base Focused Purely on eyewear</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -381,7 +457,7 @@ export default function HomePage() {
                       <div>
                         <h4 className="font-semibold">Marketing Support</h4>
                         <p className="text-gray-600 text-sm">
-                          Professional marketing and promotional support to boost sales
+                           Dashboard for managing orders, products, performance
                         </p>
                       </div>
                     </div>
@@ -400,6 +476,87 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/*Vendor FAQ's Section */}
+        <section id="features" className="  w-full py-12 md:py-24 lg:py-32">
+          <div className=" flex items-center justify-center">
+            <div className="container px-4 md:px-6">
+              <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                <div className="space-y-2">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Vendor's FAQ</h2>
+                  <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    Here are answers to the most comman questions we recieved from vendors 
+                  </p>
+                </div>
+              </div>
+              <Accordion
+      type="single"
+      collapsible
+      className="w-full"
+      defaultValue="item-1"
+    >
+      <AccordionItem value="item-1">
+        <AccordionTrigger> Q1. Is there a fee to join FrameFinder?</AccordionTrigger>
+        <AccordionContent className="flex flex-col gap-4 text-balance">
+          <p>
+            No! We're currently waiving all listing fees during our launch phase. You only pay a small commission on successful orders.
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Q2. Do I need a GST number to sell?</AccordionTrigger>
+        <AccordionContent className="flex flex-col gap-4 text-balance">
+          <p>
+            Yes. You must have a valid GSTIN and PAN card to register as a vendor.
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>Q3. What kind of eyewear can I sell?</AccordionTrigger>
+        <AccordionContent className="flex flex-col gap-4 text-balance">
+          <p>
+            Spectacles, sunglasses, contact lenses, powered glasses, prescription lenses, and accessories — all are welcome!
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-4">
+        <AccordionTrigger>Q4. Who handles shipping and returns?</AccordionTrigger>
+        <AccordionContent className="flex flex-col gap-4 text-balance">
+          <p>
+            We've partnered with courier services for delivery. You pack the product — we handle pickup and return logistics.
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-5">
+        <AccordionTrigger >Q5. How do I upload my products?</AccordionTrigger>
+        <AccordionContent className="flex flex-col gap-4 text-balance">
+          <p>
+            Through our vendor dashboard — upload one by one or in bulk via CSV and images.
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-6">
+        <AccordionTrigger>Q6. How do I receive payments?</AccordionTrigger>
+        <AccordionContent className="flex flex-col gap-4 text-balance">
+          <p>
+            You'll receive direct bank transfers on a weekly cycle, minus the platform commission.
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-7">
+        <AccordionTrigger>Q7. Can I talk to someone before joining?</AccordionTrigger>
+        <AccordionContent className="flex flex-col gap-4 text-balance">
+          <p>
+            Absolutely — book a free onboarding call with our team or message us on WhatsApp!
+          </p>
+        </AccordionContent>
+      </AccordionItem>
+      
+    </Accordion>
+            </div>
+          </div>
+        </section>
+
 
         {/* CTA Section */}
         <section className=" selection:bg-green-800 selection:text-white w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-green-600 to-emerald-600">
@@ -427,7 +584,7 @@ export default function HomePage() {
                     variant="outline"
                     className="border-white text-white hover:bg-white hover:text-green-600 bg-transparent"
                   >
-                    Schedule Demo
+                    Contact US
                   </Button>
                 </div>
               </div>
@@ -461,7 +618,6 @@ export default function HomePage() {
                         className="object-cover h-full w-full"
                       />
                     </div>
-
                     <p className="text-lg font-semibold text-gray-700">Smart City Jhansi</p>
                   </div>
                 </div>
@@ -489,13 +645,13 @@ export default function HomePage() {
             <div className="space-y-4">
               <h4 className="text-sm font-semibold">Follow Us On</h4>
               <div className="flex gap-4">
-                <Link href="#" className="text-gray-600 hover:text-green-600" aria-label="Instagram">
+                <Link href="https://www.instagram.com/framefinder.co?igsh=OTE3Y3UybDhvY2ll" className="text-gray-600 hover:text-green-600" aria-label="Instagram">
                   <Instagram className="h-6 w-6" />
                 </Link>
-                <Link href="#" className="text-gray-600 hover:text-green-600" aria-label="Threads">
-                  <User className="h-6 w-6" />
+                <Link href="https://www.threads.com/@framefinder.co?igshid=NTc4MTIwNjQ2YQ==" className="text-gray-600 hover:text-green-600" aria-label="Threads">
+                  <AtSign className="h-6 w-6" />
                 </Link>
-                <Link href="#" className="text-gray-600 hover:text-green-600" aria-label="LinkedIn">
+                <Link href="https://www.linkedin.com/company/framefinder-co/" className="text-gray-600 hover:text-green-600" aria-label="LinkedIn">
                   <Linkedin className="h-6 w-6" />
                 </Link>
               </div>
